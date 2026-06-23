@@ -601,24 +601,103 @@ function Certificates() {
 /* ---------------- PROJECTS ---------------- */
 const PROJECTS = [
   {
-    name: "Office Network Overhaul",
+    name: "Setup Server, Synology Server",
     tag: "Infrastructure",
-    desc: "Redesigned a 200-user office network with MikroTik core + Unifi access.",
+    img: "/projects/Tombrok Project.webp",
+    desc: "A well-integrated storage and network system provides optimal data security, flexible accessibility, and high infrastructure reliability. PT Tombrok Jaya Permai's internal team can manage data more efficiently, and a structured backup strategy ensures business continuity.",
+    tags: ["Synology", "Winbox", "DDNS", "Nginx Reverse Proxy", "Mikortik", "Proxmox", "Cloudflare", "OpenVPN", "Dell Workstation", "Virtualization"],
+    url: "",
   },
   {
-    name: "Automated Onboarding",
-    tag: "Scripting",
-    desc: "PowerShell + Graph API pipeline to provision M365 accounts in 30 seconds.",
+    name: "Web App System Internal Application",
+    tag: "Web App",
+    img: "/projects/saffnco project.webp",
+    desc: "Internal web application platform for SAFF & Co. featuring 6 integrated modules (Meeting Room Booking, Legal Request, Car Booking, Asset Request, Creative Asset, Digital Library) to centralize and streamline internal operations. Built with Next.js, Laravel, and Docker, with automated Cloudflare cache purging and Cloudflare Turnstile for bot protection.",
+    tags: ["React JS", "Laravel", "Cloudflare", "Nginx", "CI/CD", "Github Action", "Mysql", "PHP", "Tailwind", "Cloudflare Turnstile", "Radix UI", "Docker", "Reverse Proxy", "Linux", "DDNS"],
+    url: "",
   },
   {
-    name: "Self-hosted Monitoring",
-    tag: "Observability",
-    desc: "Grafana + Prometheus + Loki stack covering 40 servers and edge devices.",
+    name: "Rustdesk, Setup self hosted",
+    tag: "Remote Access",
+    img: "/projects/rustdesk.webp",
+    desc: "Implemented and configured a self-hosted Rustdesk setup on Synology NAS at PT Lizzie Parra Kreasi (BLP Beauty) and providing secure remote access.",
+    tags: ["Docker", "Port-forwarding", "Rest-API", "Winbox", "Nginx Reverse Proxy", "Remote desktop", "DDNS"],
+    url: "",
   },
   {
-    name: "Backup-as-Code",
-    tag: "Sysadmin",
-    desc: "Ansible-driven offsite backups with weekly restore drills. Zero data loss in 18 months.",
+    name: "CasaOS, Setup dashboard server for VPS CLI",
+    tag: "Server",
+    img: "/projects/casaos.webp",
+    desc: "Configured CasaOS at PT Lizzie Parra Kreasi (BLP Beauty) as a web-based dashboard to manage VPS via CLI, integrating Docker, Nginx reverse proxy, and secure remote access with DDNS.",
+    tags: ["Docker", "Port-forwarding", "casaos", "linux", "Nginx Reverse Proxy", "Remote desktop", "DDNS"],
+    url: "",
+  },
+  {
+    name: "Grafana, Network & Server Monitoring",
+    tag: "Monitoring",
+    img: "/projects/grafana.webp",
+    desc: "Deployed Grafana with Prometheus, Node Exporter, and SNMP to monitor MikroTik networks and servers in real-time, ensuring optimal performance.",
+    tags: ["Mikrotik", "Winbox", "Docker", "Linux", "SNMP", "Synology", "Nginx Reverse Proxy", "Grafana", "Prometheus", "Node Exporter"],
+    url: "",
+  },
+  {
+    name: "Mikrotik Hotspot Monitoring",
+    tag: "Network",
+    img: "/projects/hostpot.webp",
+    desc: "We installed a hotspot system at PT Lizzie Parra Kreasi (BLP Beauty) for 100+ employees, with a user-friendly login page for easy access.",
+    tags: ["Mikrotik", "Winbox", "Rest-API", "Webserver", "Nginx Reverse Proxy", "SSL/TLS", "Certificate", "DHCP Server", "Port-forwarding"],
+    url: "",
+    github: "",
+  },
+  {
+    name: "Installation Device Server",
+    tag: "Infrastructure",
+    img: "/projects/installation.webp",
+    desc: "Deployed Mikrotik RB1100 HX2 at PT Smartec Teknologi Indonesia with 1Gbps speed, supporting 100+ users and seamless file sharing.",
+    tags: ["Mikrotik", "Winbox", "TP-Link", "Cisco Packet Tracer", "Wireshark"],
+    url: "",
+  },
+  {
+    name: "Setup New Device Server",
+    tag: "Infrastructure",
+    img: "/projects/setupnewdevice.webp",
+    desc: "Deployed Mikrotik RB1100 HX2 at PT BON CAFE INDONESIA with 1Gbps speed and support for 50+ users, enabling smooth collaboration and file sharing.",
+    tags: ["Mikrotik", "Winbox", "Ruijie", "TP-Link", "Cisco Packet Tracer", "Windows Sever", "WHM", "Mail Server"],
+    url: "",
+  },
+  {
+    name: "Landing Page",
+    tag: "Web Dev",
+    img: "/projects/landingpage.webp",
+    desc: "I created a responsive landing page for CV Berkah Teknik Mandiri, an engineering and construction services company.",
+    tags: ["PHP", "CSS", "Javascript", "Bootstrap", "Mysql"],
+    url: "",
+    github: "",
+  },
+  {
+    name: "Nextcloud, Cloud Computing",
+    tag: "Cloud",
+    img: "/projects/nextcloud.webp",
+    desc: "Setting Up a Home Server self-hosted Using NextCloud with the Linux Ubuntu Server Operating System.",
+    tags: ["Nextcloud", "Docker", "Mysql", "Nginx", "Linux", "Cloudflare", "Redis", "DDNS"],
+    url: "",
+  },
+  {
+    name: "Web App Landing page",
+    tag: "Web Dev",
+    img: "/projects/webapp.webp",
+    desc: "Creating a WebApp-Based Company Profile for NoFileExistsHere, with content accessible through an admin panel and customizable as needed.",
+    tags: ["PHP", "Laravel", "Filament", "Livewire", "Mysql", "Redis", "Tailwind", "Bootstrap"],
+    url: "",
+  },
+  {
+    name: "Personal Portfolio",
+    tag: "Web Dev",
+    img: "/projects/portfolio.webp",
+    desc: "Creating and updating a personal portfolio to be more modern and minimalist, with eye-catching animations.",
+    tags: ["React", "NextJS", "Tailwind", "NodeJS"],
+    url: "",
+    github: "",
   },
 ];
 
@@ -633,43 +712,80 @@ function Projects() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
+        <div className="mt-16 grid gap-14 md:grid-cols-2 md:gap-10">
           {PROJECTS.map((p, i) => (
             <Reveal key={i} delay={i * 0.08}>
               <ParallaxY range={i % 2 ? 30 : -30}>
-                <motion.a
-                  href="#contact"
+                <motion.div
                   whileHover={{ y: -6 }}
                   className="brutal-border brutal-shadow-lg group block overflow-hidden bg-background"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-foreground text-background">
-                    <div
-                      className="absolute inset-0 opacity-40"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(circle at 20% 30%, var(--paper) 1px, transparent 1.5px)",
-                        backgroundSize: "18px 18px",
-                      }}
+                  <div className="relative overflow-hidden bg-foreground/5">
+                    <img
+                      src={p.img}
+                      alt={p.name}
+                      className="w-full transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
-                    <div className="absolute inset-0 flex items-end justify-between p-6">
-                      <span className="font-display text-7xl leading-none">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="font-mono-x text-xs uppercase tracking-widest opacity-80">
-                        {p.tag}
-                      </span>
-                    </div>
+                    <div className="absolute inset-0 bg-foreground/10" />
+                    <span className="absolute right-4 top-4 brutal-border bg-foreground px-2 py-0.5 font-mono-x text-xs uppercase tracking-widest text-background">
+                      {p.tag}
+                    </span>
                   </div>
-                  <div className="flex items-start justify-between gap-4 p-6">
-                    <div>
+                  <div className="p-6">
+                    <div className="flex items-start justify-between gap-4">
                       <h3 className="font-display text-2xl md:text-3xl">{p.name}</h3>
-                      <p className="mt-2 max-w-md text-muted-foreground">{p.desc}</p>
+                      <span className="font-display text-3xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                        ↗
+                      </span>
                     </div>
-                    <motion.span className="font-display text-3xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                      ↗
-                    </motion.span>
+                    <p className="mt-3 text-muted-foreground">{p.desc}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {p.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="brutal-border px-2 py-0.5 font-mono-x text-xs"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    {(p.url || ("github" in p && p.github)) && (
+                      <div className="mt-5 flex flex-wrap gap-3">
+                        {p.url && (
+                          <a
+                            href={p.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="brutal-border brutal-shadow inline-flex items-center gap-2 bg-background px-5 py-2.5 font-mono-x text-sm transition-transform hover:-translate-y-0.5"
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                              <polyline points="15 3 21 3 21 9" />
+                              <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                            Live Demo
+                          </a>
+                        )}
+                        {"github" in p && p.github && (
+                          <a
+                            href={p.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="brutal-border brutal-shadow inline-flex items-center gap-2 bg-background px-5 py-2.5 font-mono-x text-sm transition-transform hover:-translate-y-0.5"
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                            </svg>
+                            Code/Docs
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
-                </motion.a>
+                </motion.div>
               </ParallaxY>
             </Reveal>
           ))}
@@ -717,7 +833,7 @@ function Skills() {
         />
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-6xl gap-6 px-4 md:mt-16 md:grid-cols-2 md:px-6 lg:grid-cols-4">
+      <div className="mx-auto mt-12 grid max-w-6xl gap-6 px-4 md:mt-16 md:grid-cols-3 md:px-6 lg:grid-cols-5">
         {SKILL_GROUPS.map((g, i) => (
           <Reveal key={g.title} delay={i * 0.08}>
             <motion.div
@@ -774,7 +890,7 @@ function Contact() {
             <div className="space-y-6">
               <p className="text-xl">
                 Got a network on fire? A server with trust issues? Or just want to chat about
-                homelab setups — slide into my inbox.
+                homelab setups - slide into my inbox.
               </p>
               <div className="space-y-3 font-mono-x text-sm">
                 <a
@@ -860,38 +976,38 @@ function Contact() {
 function Footer() {
   return (
     <footer className="relative overflow-hidden border-t-2 border-foreground bg-background">
-      <ParallaxY range={20}>
+      <ParallaxY range={20} className="w-full">
         <div className="select-none whitespace-nowrap py-10 text-center font-display text-[22vw] leading-none text-outline md:text-[18vw]">
           wikidotexe.
         </div>
       </ParallaxY>
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 border-t-2 border-foreground px-4 py-8 md:flex-row md:items-center md:px-6">
-        <div className="font-display text-xl">wikidotexe.</div>
-        <div className="flex flex-wrap gap-5 font-mono-x text-sm">
-          {SECTIONS.slice(1).map((s) => (
-            <a key={s.id} href={`#${s.id}`} className="hover:underline">
-              {s.label}
-            </a>
-          ))}
-        </div>
-        <div className="flex items-center gap-4 font-mono-x text-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 md:px-6">
+        <span className="font-mono-x text-sm text-muted-foreground">
+          © 2026 Wikidotexe. All rights reserved.
+        </span>
+        <div className="flex items-center gap-4">
           <a
             href="https://github.com/wikidotexe"
             target="_blank"
             rel="noreferrer"
-            className="hover:underline"
+            aria-label="GitHub"
+            className="opacity-70 transition-opacity hover:opacity-100"
           >
-            GitHub
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
           </a>
           <a
             href="https://linkedin.com/in/dwiki-arlian-maulana-852b14209"
             target="_blank"
             rel="noreferrer"
-            className="hover:underline"
+            aria-label="LinkedIn"
+            className="opacity-70 transition-opacity hover:opacity-100"
           >
-            LinkedIn
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
           </a>
-          <span className="text-muted-foreground">© 2025</span>
         </div>
       </div>
     </footer>

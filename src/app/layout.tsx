@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Dwiki Arlian Maulana - Portfolio",
+    default: "Dwiki Arlian Maulana — IT Support & System Engineer",
     template: "%s | wikidotexe",
   },
   description:

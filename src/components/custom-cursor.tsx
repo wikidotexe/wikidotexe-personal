@@ -46,14 +46,14 @@ export function CustomCursor() {
   if (!enabled) return null;
   return (
     <>
-      <style>{`@media (hover: hover) and (pointer: fine) { html, body, a, button { cursor: none !important; } }`}</style>
+      <style>{`@media (hover: hover) and (pointer: fine) { *, html, body { cursor: none !important; } }`}</style>
       <div
         ref={dot}
-        className="pointer-events-none fixed left-0 top-0 z-[200] h-2 w-2 rounded-full bg-foreground"
+        className="pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 rounded-full bg-foreground"
       />
       <div
         ref={ring}
-        className="pointer-events-none fixed left-0 top-0 z-[200] h-8 w-8 rounded-full border-2 border-foreground transition-[width,height,margin] duration-200"
+        className="pointer-events-none fixed left-0 top-0 z-[9999] h-8 w-8 rounded-full border-2 border-foreground transition-[width,height,margin] duration-200"
         style={
           hover
             ? {

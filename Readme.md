@@ -1,94 +1,88 @@
 ![logo wikidotexe](https://github.com/user-attachments/assets/da82fc30-1dbe-48bf-b57c-033dec2ceb9d)
 
-# 🚀 Portfolio Pro - Unified V2
+# wikidotexe — Personal Portfolio
 
-[![GitHub Stars](https://img.shields.io/github/stars/wikidotexe/Portfolio-modern?style=social)](https://github.com/wikidotexe/Portfolio-modern/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/wikidotexe/Portfolio-modern?style=social)](https://github.com/wikidotexe/Portfolio-modern/network)
-[![Build & Deploy](https://github.com/wikidotexe/PortfolioApp/actions/workflows/main.yml/badge.svg)](https://github.com/wikidotexe/PortfolioApp/actions)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-latest-EF0E7B?logo=framer)](https://www.framer.com/motion/)
 
-This is a **Full-Stack Portfolio Application** featuring a powerful **Laravel 11** backend and a stunning **Next.js 15** frontend enhanced with **Framer Motion** and **Motion/React** animations.
-
-> **Project Status**: 🧠 Actively Developed & Fully Automated via CI/CD
+Personal portfolio of **Dwiki Arlian Maulana** — IT Support & System Engineer with 6+ years of experience managing networks, servers, cloud infrastructure, and end-user systems.
 
 ---
 
-## 🔍 **Core Features**
+## Tech Stack
 
-- 🎨 **Modern & Fluid Design** Built with **Next.js 15**, **Tailwind CSS**, and **Shadcn UI**.
-- 🚀 **Automated CI/CD** Zero-downtime deployment to Synology NAS via GitHub Actions & Docker.
-- ✨ **High-Performance Animations** Standardized `motion/react` (Framer Motion) implementations for a "snappy" and premium feel.
-- 🖼️ **Optimized Media** Bypass-optimized image loading for robust performance across different network environments.
-- 🛡️ **API Security** Restricted direct browser access to API endpoints (404 for non-JSON requests).
-- 🛠️ **Powerful Admin Dashboard** Manage projects, skills, and certificates via **Laravel Filament**.
-- 🌗 **Intelligent Dark Mode** Seamless theme switching with persistent user preferences.
-- � **Dockerized Stack** Production-ready containers for consistent environments.
+- **Framework** — Next.js 15 (App Router)
+- **Styling** — Tailwind CSS v4 with custom brutalist design tokens
+- **Animations** — Framer Motion (`motion/react`)
+- **Smooth Scroll** — Lenis
+- **Fonts** — Space Grotesk (display), Inter (body)
 
 ---
 
-## 📂 **Project Structure**
+## Project Structure
 
-```bash
-PortfolioApp/
-├── .github/workflows/    # CI/CD Pipeline (GitHub Actions)
-├── frontend/             # Next.js 15 Application
-│   ├── components/       # Optimized UI Components
-│   └── ...
-├── backend/              # Laravel 11 API (Server)
-│   ├── app/              # Business Logic & Middleware
-│   └── ...
-├── docker-compose.yml    # Combined Docker Orchestration
-└── README.md
+```
+wikidotexe-studio/
+├── public/
+│   ├── certificate/      # Certificate images (.webp)
+│   ├── logo/             # Site logo
+│   ├── projects/         # Project screenshots (.webp)
+│   └── portrait.jpg      # Profile photo
+├── src/
+│   ├── app/
+│   │   ├── globals.css   # Global styles & Tailwind config
+│   │   ├── layout.tsx    # Root layout & metadata
+│   │   ├── not-found.tsx # 404 page
+│   │   └── page.tsx      # Home page
+│   ├── components/
+│   │   ├── custom-cursor.tsx
+│   │   ├── motion-primitives.tsx
+│   │   ├── portfolio.tsx  # Main portfolio content
+│   │   └── ui/           # shadcn/ui components
+│   └── hooks/
+│       └── use-lenis.ts
+├── next.config.ts
+├── postcss.config.mjs
+└── package.json
 ```
 
 ---
 
-## 🛠️ **CI/CD Pipeline**
+## Getting Started
 
-The project features a fully automated deployment pipeline:
-1. **Push to Main**: Triggers GitHub Actions.
-2. **Build**: Docker images for Frontend & Backend are built and pushed to **Docker Hub**.
-3. **Deploy**: The pipeline SSHes into the **Synology Server**, pulls the latest images, and recreates containers (`--force-recreate`).
-
----
-
-## ⚙️ **Installation & Setup**
-
-### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/wikidotexe/PortfolioApp.git
-cd PortfolioApp
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm run start
 ```
 
-### 2️⃣ Docker Deployment (Recommended)
-```bash
-docker-compose up -d --build
-```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## ✨ **Motion & Performance**
+## Features
 
-- **snappy.js**: Animation durations have been optimized to `0.3s` for a faster user experience.
-- **Liquid Indicator**: Scroll-synced and hover-reactive navbar indicator.
-- **Staggered Reveals**: Efficient layout animations for cards and timeline items.
-
----
-
-## 🧑‍💻 **Contribution**
-
-Contributions are welcome! Please follow the standard fork/PR workflow.
-
----
-
-## 🌟 **Acknowledgments**
-
-Thank you for visiting! If you find this project useful, please drop a ⭐!
+- Custom animated cursor with hover states
+- Lenis smooth scroll
+- Certificate viewer with modal popup and credential links
+- Work experience timeline
+- Projects gallery with live demo / docs links
+- Skills grid (5 categories)
+- Grain texture overlay & brutalist design system
+- Fully responsive
 
 ---
 
-## 📄 **License**
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Happy coding & stay creative 💻✨
+MIT License — feel free to use this as inspiration for your own portfolio.
     
