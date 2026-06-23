@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { frame, cancelFrame } from "framer-motion";
 
 export function useLenis() {
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
     const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
-    let raf = 0;
-    const loop = (t: number) => {
-      lenis.raf(t);
-      raf = requestAnimationFrame(loop);
+
+    // Run Lenis inside Framer Motion's frame scheduler so useScroll
+    // always reads the scroll position that Lenis already committed this frame.
+    const update = ({ timestamp }: { timestamp: number }) => {
+      lenis.raf(timestamp);
     };
-    raf = requestAnimationFrame(loop);
+    frame.update(update, true);
 
     const onClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
@@ -29,7 +31,7 @@ export function useLenis() {
 
     return () => {
       document.removeEventListener("click", onClick);
-      cancelAnimationFrame(raf);
+      cancelFrame(update);
       lenis.destroy();
     };
   }, []);
