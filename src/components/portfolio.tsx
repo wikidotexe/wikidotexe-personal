@@ -202,17 +202,17 @@ function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.8} className="mt-20 grid grid-cols-3 gap-4 md:mt-28">
+        <Reveal delay={0.8} className="mt-20 grid grid-cols-3 gap-3 md:mt-28 md:gap-4">
           {[
             { n: 5, s: "+", l: "Years in IT" },
             { n: 30, s: "+", l: "Systems shipped" },
             { n: 99, s: "%", l: "Uptime obsession" },
           ].map((it) => (
-            <div key={it.l} className="brutal-border bg-background p-4 md:p-6">
-              <div className="font-display text-4xl md:text-6xl">
+            <div key={it.l} className="brutal-border bg-background p-3 md:p-6">
+              <div className="font-display text-2xl sm:text-4xl md:text-6xl">
                 <Counter to={it.n} suffix={it.s} />
               </div>
-              <div className="mt-2 font-mono-x text-xs uppercase tracking-wider text-muted-foreground">
+              <div className="mt-1 font-mono-x text-[10px] uppercase tracking-wider text-muted-foreground sm:text-xs md:mt-2">
                 {it.l}
               </div>
             </div>
@@ -399,10 +399,10 @@ function Experience() {
         <div className="mt-16 space-y-0">
           {EXPERIENCE.map((e, i) => (
             <Reveal key={i} delay={i * 0.08}>
-              <div className="group grid grid-cols-[auto_1fr] gap-4 border-t-2 border-background/40 py-8 transition-colors hover:bg-background hover:text-foreground md:grid-cols-[120px_1fr_auto] md:gap-8 md:py-10">
-                <div className="font-mono-x text-sm opacity-70">{e.time}</div>
+              <div className="group border-t-2 border-background/40 py-8 transition-colors hover:bg-background hover:text-foreground md:grid md:grid-cols-[120px_1fr_auto] md:gap-8 md:py-10">
+                <div className="mb-2 font-mono-x text-sm opacity-70 md:mb-0">{e.time}</div>
                 <div>
-                  <h3 className="font-display text-3xl md:text-5xl">{e.role}</h3>
+                  <h3 className="font-display text-2xl md:text-5xl">{e.role}</h3>
                   <div className="mt-1 text-sm opacity-70">{e.company}</div>
                   <p className="mt-3 max-w-xl text-base md:text-lg">{e.desc}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -416,9 +416,9 @@ function Experience() {
                     ))}
                   </div>
                 </div>
-                <div className="col-span-2 md:col-span-1 md:flex md:items-center">
+                <div className="hidden md:flex md:items-center">
                   <motion.span
-                    className="font-display text-4xl md:text-6xl"
+                    className="font-display text-6xl"
                     initial={{ x: 0 }}
                     whileHover={{ x: 8 }}
                   >
@@ -775,7 +775,7 @@ function Projects() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-14 md:grid-cols-2 md:gap-10">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 md:gap-10">
           {PROJECTS.map((p, i) => (
             <Reveal key={i} delay={i * 0.08}>
               <ParallaxY range={i % 2 ? 30 : -30}>
@@ -918,7 +918,7 @@ function Skills() {
         />
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-6xl gap-6 px-4 md:mt-16 md:grid-cols-3 md:px-6 lg:grid-cols-5">
+      <div className="mx-auto mt-12 grid max-w-6xl grid-cols-2 gap-4 px-4 md:mt-16 md:grid-cols-3 md:gap-6 md:px-6 lg:grid-cols-5">
         {SKILL_GROUPS.map((g, i) => (
           <Reveal key={g.title} delay={i * 0.08}>
             <motion.div
@@ -1066,7 +1066,7 @@ function Footer() {
           wikidotexe.
         </div>
       </ParallaxY>
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 md:px-6">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6 md:px-6">
         <span className="font-mono-x text-sm text-muted-foreground">
           © 2026 Wikidotexe. All rights reserved.
         </span>
