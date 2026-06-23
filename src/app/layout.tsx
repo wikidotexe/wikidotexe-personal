@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "wikidotexe",
     images: [
       {
-        url: "/logo/logowikidotexe.png",
+        url: "/metagraph.png",
         width: 1200,
         height: 630,
         alt: "wikidotexe — Dwiki Arlian Maulana",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description:
       "Portfolio of Dwiki Arlian Maulana — IT Support & System Engineer with 6+ years managing networks, servers, and automation.",
     creator: "@wikidotexe",
-    images: ["/logo/logowikidotexe.png"],
+    images: ["/metagraph.png"],
   },
   icons: {
     icon: "/logo/logowikidotexe.png",
