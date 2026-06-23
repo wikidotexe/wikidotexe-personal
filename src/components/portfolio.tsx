@@ -474,13 +474,7 @@ const CERTS = [
   },
 ];
 
-function CertModal({
-  cert,
-  onClose,
-}: {
-  cert: (typeof CERTS)[0] | null;
-  onClose: () => void;
-}) {
+function CertModal({ cert, onClose }: { cert: (typeof CERTS)[0] | null; onClose: () => void }) {
   useEffect(() => {
     if (!cert) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -524,11 +518,7 @@ function CertModal({
               </button>
             </div>
             <div className="p-4">
-              <img
-                src={cert.img}
-                alt={cert.name}
-                className="w-full object-contain"
-              />
+              <img src={cert.img} alt={cert.name} className="w-full object-contain" />
             </div>
             <div className="flex items-center justify-between border-t-2 border-foreground px-5 py-3">
               <span className="font-mono-x text-xs text-muted-foreground">{cert.org}</span>
@@ -605,7 +595,18 @@ const PROJECTS = [
     tag: "Infrastructure",
     img: "/projects/Tombrok Project.webp",
     desc: "A well-integrated storage and network system provides optimal data security, flexible accessibility, and high infrastructure reliability. PT Tombrok Jaya Permai's internal team can manage data more efficiently, and a structured backup strategy ensures business continuity.",
-    tags: ["Synology", "Winbox", "DDNS", "Nginx Reverse Proxy", "Mikortik", "Proxmox", "Cloudflare", "OpenVPN", "Dell Workstation", "Virtualization"],
+    tags: [
+      "Synology",
+      "Winbox",
+      "DDNS",
+      "Nginx Reverse Proxy",
+      "Mikortik",
+      "Proxmox",
+      "Cloudflare",
+      "OpenVPN",
+      "Dell Workstation",
+      "Virtualization",
+    ],
     url: "",
   },
   {
@@ -613,7 +614,23 @@ const PROJECTS = [
     tag: "Web App",
     img: "/projects/saffnco project.webp",
     desc: "Internal web application platform for SAFF & Co. featuring 6 integrated modules (Meeting Room Booking, Legal Request, Car Booking, Asset Request, Creative Asset, Digital Library) to centralize and streamline internal operations. Built with Next.js, Laravel, and Docker, with automated Cloudflare cache purging and Cloudflare Turnstile for bot protection.",
-    tags: ["React JS", "Laravel", "Cloudflare", "Nginx", "CI/CD", "Github Action", "Mysql", "PHP", "Tailwind", "Cloudflare Turnstile", "Radix UI", "Docker", "Reverse Proxy", "Linux", "DDNS"],
+    tags: [
+      "React JS",
+      "Laravel",
+      "Cloudflare",
+      "Nginx",
+      "CI/CD",
+      "Github Action",
+      "Mysql",
+      "PHP",
+      "Tailwind",
+      "Cloudflare Turnstile",
+      "Radix UI",
+      "Docker",
+      "Reverse Proxy",
+      "Linux",
+      "DDNS",
+    ],
     url: "",
   },
   {
@@ -621,7 +638,15 @@ const PROJECTS = [
     tag: "Remote Access",
     img: "/projects/rustdesk.webp",
     desc: "Implemented and configured a self-hosted Rustdesk setup on Synology NAS at PT Lizzie Parra Kreasi (BLP Beauty) and providing secure remote access.",
-    tags: ["Docker", "Port-forwarding", "Rest-API", "Winbox", "Nginx Reverse Proxy", "Remote desktop", "DDNS"],
+    tags: [
+      "Docker",
+      "Port-forwarding",
+      "Rest-API",
+      "Winbox",
+      "Nginx Reverse Proxy",
+      "Remote desktop",
+      "DDNS",
+    ],
     url: "",
   },
   {
@@ -629,7 +654,15 @@ const PROJECTS = [
     tag: "Server",
     img: "/projects/casaos.webp",
     desc: "Configured CasaOS at PT Lizzie Parra Kreasi (BLP Beauty) as a web-based dashboard to manage VPS via CLI, integrating Docker, Nginx reverse proxy, and secure remote access with DDNS.",
-    tags: ["Docker", "Port-forwarding", "casaos", "linux", "Nginx Reverse Proxy", "Remote desktop", "DDNS"],
+    tags: [
+      "Docker",
+      "Port-forwarding",
+      "casaos",
+      "linux",
+      "Nginx Reverse Proxy",
+      "Remote desktop",
+      "DDNS",
+    ],
     url: "",
   },
   {
@@ -637,7 +670,18 @@ const PROJECTS = [
     tag: "Monitoring",
     img: "/projects/grafana.webp",
     desc: "Deployed Grafana with Prometheus, Node Exporter, and SNMP to monitor MikroTik networks and servers in real-time, ensuring optimal performance.",
-    tags: ["Mikrotik", "Winbox", "Docker", "Linux", "SNMP", "Synology", "Nginx Reverse Proxy", "Grafana", "Prometheus", "Node Exporter"],
+    tags: [
+      "Mikrotik",
+      "Winbox",
+      "Docker",
+      "Linux",
+      "SNMP",
+      "Synology",
+      "Nginx Reverse Proxy",
+      "Grafana",
+      "Prometheus",
+      "Node Exporter",
+    ],
     url: "",
   },
   {
@@ -645,7 +689,17 @@ const PROJECTS = [
     tag: "Network",
     img: "/projects/hostpot.webp",
     desc: "We installed a hotspot system at PT Lizzie Parra Kreasi (BLP Beauty) for 100+ employees, with a user-friendly login page for easy access.",
-    tags: ["Mikrotik", "Winbox", "Rest-API", "Webserver", "Nginx Reverse Proxy", "SSL/TLS", "Certificate", "DHCP Server", "Port-forwarding"],
+    tags: [
+      "Mikrotik",
+      "Winbox",
+      "Rest-API",
+      "Webserver",
+      "Nginx Reverse Proxy",
+      "SSL/TLS",
+      "Certificate",
+      "DHCP Server",
+      "Port-forwarding",
+    ],
     url: "",
     github: "",
   },
@@ -662,7 +716,16 @@ const PROJECTS = [
     tag: "Infrastructure",
     img: "/projects/setupnewdevice.webp",
     desc: "Deployed Mikrotik RB1100 HX2 at PT BON CAFE INDONESIA with 1Gbps speed and support for 50+ users, enabling smooth collaboration and file sharing.",
-    tags: ["Mikrotik", "Winbox", "Ruijie", "TP-Link", "Cisco Packet Tracer", "Windows Sever", "WHM", "Mail Server"],
+    tags: [
+      "Mikrotik",
+      "Winbox",
+      "Ruijie",
+      "TP-Link",
+      "Cisco Packet Tracer",
+      "Windows Sever",
+      "WHM",
+      "Mail Server",
+    ],
     url: "",
   },
   {
@@ -742,10 +805,7 @@ function Projects() {
                     <p className="mt-3 text-muted-foreground">{p.desc}</p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {p.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="brutal-border px-2 py-0.5 font-mono-x text-xs"
-                        >
+                        <span key={t} className="brutal-border px-2 py-0.5 font-mono-x text-xs">
                           {t}
                         </span>
                       ))}
@@ -760,7 +820,16 @@ function Projects() {
                             onClick={(e) => e.stopPropagation()}
                             className="brutal-border brutal-shadow inline-flex items-center gap-2 bg-background px-5 py-2.5 font-mono-x text-sm transition-transform hover:-translate-y-0.5"
                           >
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
                               <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
                               <polyline points="15 3 21 3 21 9" />
                               <line x1="10" y1="14" x2="21" y2="3" />
@@ -797,14 +866,30 @@ function Projects() {
 
 /* ---------------- SKILLS ---------------- */
 const SKILL_GROUPS = [
-  { title: "Networking", items: ["MikroTik", "Portforwarding", "Unifi", "VLAN", "VPN", "Firewall", "Load Balancing"] },
+  {
+    title: "Networking",
+    items: ["MikroTik", "Portforwarding", "Unifi", "VLAN", "VPN", "Firewall", "Load Balancing"],
+  },
   {
     title: "System Admin",
-    items: ["Linux", "Windows Server", "Active Directory", "Google Workspace", "Microsoft 365", "Synology NAS"],
+    items: [
+      "Linux",
+      "Windows Server",
+      "Active Directory",
+      "Google Workspace",
+      "Microsoft 365",
+      "Synology NAS",
+    ],
   },
-  { title: "Infrastructure", items: ["Virtualization", "Proxmox", "Docker", "Nginx/Apache", "CI/CD", "Cloudflare"] },
+  {
+    title: "Infrastructure",
+    items: ["Virtualization", "Proxmox", "Docker", "Nginx/Apache", "CI/CD", "Cloudflare"],
+  },
   { title: "Scripting", items: ["Bash", "PowerShell", "Terminal", "VIM/Nano", "Cron"] },
-  { title: "Development", items: ["Laravel", "Next.js", "Tailwind", "Python", "PHP", "JavaScript"] }
+  {
+    title: "Development",
+    items: ["Laravel", "Next.js", "Tailwind", "Python", "PHP", "JavaScript"],
+  },
 ];
 
 function Skills() {
