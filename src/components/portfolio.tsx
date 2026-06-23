@@ -256,7 +256,7 @@ function About() {
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <PathTag path="/home/aboutme" />
         <Reveal>
-          <h2 className="font-display text-6xl leading-[0.9] md:text-8xl">
+          <h2 className="text-center md:text-left font-display text-5xl leading-[0.9] md:text-8xl">
             About <span className="text-outline italic">me</span>.
           </h2>
         </Reveal>
@@ -384,7 +384,7 @@ function Experience() {
           <span>/home/experience</span>
         </div>
         <Reveal>
-          <h2 className="font-display text-6xl leading-[0.9] md:text-8xl">
+          <h2 className="text-center md:text-left font-display text-5xl leading-[0.9] md:text-8xl">
             Professional <br />
             <span
               className="italic"
@@ -547,7 +547,7 @@ function Certificates() {
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <PathTag path="/home/certificate" />
         <Reveal>
-          <h2 className="font-display text-6xl leading-[0.9] md:text-8xl">
+          <h2 className="text-center md:text-left font-display text-5xl leading-[0.9] md:text-8xl">
             Certificate <br />
             <span className="text-outline">Finishup</span>.
           </h2>
@@ -770,7 +770,7 @@ function Projects() {
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <PathTag path="/home/projects" />
         <Reveal>
-          <h2 className="font-display text-6xl leading-[0.9] md:text-8xl">
+          <h2 className="text-center md:text-left font-display text-5xl leading-[0.9] md:text-8xl">
             Featured <span className="italic">Work</span>.
           </h2>
         </Reveal>
@@ -898,7 +898,7 @@ function Skills() {
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <PathTag path="/home/mykills" />
         <Reveal>
-          <h2 className="font-display text-6xl leading-[0.9] md:text-8xl">
+          <h2 className="text-center md:text-left font-display text-5xl leading-[0.9] md:text-8xl">
             My <span className="text-outline">Skills</span>.
           </h2>
         </Reveal>
@@ -958,7 +958,7 @@ function Contact() {
           <span>/home/contact</span>
         </div>
         <Reveal>
-          <h2 className="font-display text-6xl leading-[0.9] md:text-8xl">
+          <h2 className="text-center md:text-left font-display text-5xl leading-[0.9] md:text-8xl">
             Send Me <br />
             <span
               className="italic"
@@ -972,8 +972,8 @@ function Contact() {
 
         <div className="mt-16 grid gap-12 md:grid-cols-[1fr_1.2fr]">
           <Reveal>
-            <div className="space-y-6">
-              <p className="text-xl">
+            <div className="space-y-6 text-center md:text-left">
+              <p className="text-lg md:text-xl">
                 Got a network on fire? A server with trust issues? Or just want to chat about
                 homelab setups - slide into my inbox.
               </p>
