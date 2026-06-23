@@ -6,8 +6,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Space Grotesk Variable", system-ui, sans-serif;
-  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-display: ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: ui-monospace, "SF Mono", Menlo, monospace;
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);

@@ -38,7 +38,7 @@ function Navbar() {
   const current = SECTIONS.find((s) => s.id === active)?.label ?? "/home";
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-[120] px-4 pt-4 md:px-6 md:pt-6">
+    <header className="fixed left-0 right-0 top-0 z-120 px-4 pt-4 md:px-6 md:pt-6">
       <nav className="brutal-border brutal-shadow mx-auto flex max-w-6xl items-center justify-between bg-background px-4 py-3 md:px-6">
         <a href="#home" className="font-display text-xl md:text-2xl">
           wikidotexe<span className="text-muted-foreground">.</span>
@@ -268,7 +268,7 @@ function About() {
                 <img
                   src="/portrait.jpg"
                   alt="Dwiki Arlian Maulana"
-                  className="aspect-[4/5] w-full object-cover grayscale"
+                  className="aspect-4/5 w-full object-cover grayscale"
                   loading="lazy"
                 />
                 <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-foreground px-4 py-2 font-mono-x text-xs text-background">
@@ -490,7 +490,7 @@ function CertModal({ cert, onClose }: { cert: (typeof CERTS)[0] | null; onClose:
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[300] flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-300 flex items-center justify-center p-4 md:p-8"
           onClick={onClose}
         >
           <div className="absolute inset-0 bg-foreground/80 backdrop-blur-sm" />
@@ -572,7 +572,7 @@ function Certificates() {
                     <img
                       src={c.img}
                       alt={c.name}
-                      className="aspect-[4/3] w-full object-cover transition-transform duration-300 hover:scale-105"
+                      className="aspect-4/3 w-full object-cover transition-transform duration-300 hover:scale-105"
                       loading="lazy"
                     />
                   </div>
@@ -918,7 +918,7 @@ function Skills() {
         />
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-6xl grid-cols-2 gap-4 px-4 md:mt-16 md:grid-cols-3 md:gap-6 md:px-6 lg:grid-cols-5">
+      <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-4 px-4 md:mt-16 md:grid-cols-2 md:gap-6 md:px-6 lg:grid-cols-3">
         {SKILL_GROUPS.map((g, i) => (
           <Reveal key={g.title} delay={i * 0.08}>
             <motion.div
@@ -1062,11 +1062,11 @@ function Footer() {
   return (
     <footer className="relative overflow-hidden border-t-2 border-foreground bg-background">
       <ParallaxY range={20} className="w-full">
-        <div className="select-none whitespace-nowrap py-10 text-center font-display text-[22vw] leading-none text-outline md:text-[18vw]">
+        <div className="select-none py-10 text-center font-display text-[10vw] sm:text-[11vw] md:text-[12vw] leading-none text-outline overflow-hidden">
           wikidotexe.
         </div>
       </ParallaxY>
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-6 md:px-6">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 px-4 py-6 text-center md:flex-row md:justify-between md:text-left md:px-6">
         <span className="font-mono-x text-sm text-muted-foreground">
           © 2026 Wikidotexe. All rights reserved.
         </span>
