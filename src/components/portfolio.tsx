@@ -949,7 +949,34 @@ function Skills() {
 
 /* ---------------- CONTACT ---------------- */
 function Contact() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const msgRef = useRef<HTMLTextAreaElement>(null);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: nameRef.current?.value,
+          email: emailRef.current?.value,
+          message: msgRef.current?.value,
+        }),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("sent");
+      if (nameRef.current) nameRef.current.value = "";
+      if (emailRef.current) emailRef.current.value = "";
+      if (msgRef.current) msgRef.current.value = "";
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <section id="contact" className="relative bg-foreground py-24 text-background md:py-36">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
@@ -999,33 +1026,39 @@ function Contact() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
-              className="space-y-5"
-            >
-              {[
-                { id: "name", label: "Name", type: "text" },
-                { id: "email", label: "Email", type: "email" },
-              ].map((f) => (
-                <div key={f.id}>
-                  <label
-                    htmlFor={f.id}
-                    className="block font-mono-x text-xs uppercase tracking-widest opacity-70"
-                  >
-                    {f.label}
-                  </label>
-                  <input
-                    id={f.id}
-                    type={f.type}
-                    required
-                    className="mt-2 w-full border-b-2 border-background/60 bg-transparent py-3 text-lg outline-none placeholder:opacity-40 focus:border-background"
-                    placeholder={f.label.toLowerCase()}
-                  />
-                </div>
-              ))}
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block font-mono-x text-xs uppercase tracking-widest opacity-70"
+                >
+                  Name
+                </label>
+                <input
+                  ref={nameRef}
+                  id="name"
+                  type="text"
+                  required
+                  className="mt-2 w-full border-b-2 border-background/60 bg-transparent py-3 text-lg outline-none placeholder:opacity-40 focus:border-background"
+                  placeholder="name"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block font-mono-x text-xs uppercase tracking-widest opacity-70"
+                >
+                  Email
+                </label>
+                <input
+                  ref={emailRef}
+                  id="email"
+                  type="email"
+                  required
+                  className="mt-2 w-full border-b-2 border-background/60 bg-transparent py-3 text-lg outline-none placeholder:opacity-40 focus:border-background"
+                  placeholder="email"
+                />
+              </div>
               <div>
                 <label
                   htmlFor="msg"
@@ -1034,6 +1067,7 @@ function Contact() {
                   Message
                 </label>
                 <textarea
+                  ref={msgRef}
                   id="msg"
                   required
                   rows={4}
@@ -1041,12 +1075,22 @@ function Contact() {
                   placeholder="tell me everything..."
                 />
               </div>
+              {status === "error" && (
+                <p className="font-mono-x text-sm text-red-400">
+                  Failed to send. Please try again.
+                </p>
+              )}
               <Magnetic strength={0.3}>
                 <button
                   type="submit"
-                  className="brutal-border inline-flex items-center gap-2 bg-background px-6 py-4 font-display text-lg text-foreground transition-transform hover:-translate-y-1"
+                  disabled={status === "sending" || status === "sent"}
+                  className="brutal-border inline-flex items-center gap-2 bg-background px-6 py-4 font-display text-lg text-foreground transition-transform hover:-translate-y-1 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {sent ? "Sent ✓" : "Send Message →"}
+                  {status === "sending"
+                    ? "Sending..."
+                    : status === "sent"
+                    ? "Sent ✓"
+                    : "Send Message →"}
                 </button>
               </Magnetic>
             </form>
