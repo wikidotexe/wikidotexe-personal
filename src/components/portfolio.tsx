@@ -1089,8 +1089,8 @@ function Contact() {
                   {status === "sending"
                     ? "Sending..."
                     : status === "sent"
-                    ? "Sent ✓"
-                    : "Send Message →"}
+                      ? "Sent ✓"
+                      : "Send Message →"}
                 </button>
               </Magnetic>
             </form>
