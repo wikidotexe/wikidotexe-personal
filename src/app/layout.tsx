@@ -22,16 +22,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Dwiki Arlian Maulana", url: "https://github.com/wikidotexe" }],
   creator: "Dwiki Arlian Maulana",
-  metadataBase: new URL("https://wikidotexe.com"),
+  metadataBase: new URL("https://about.wikiarlianm.com"),
   openGraph: {
     title: "Dwiki Arlian Maulana — IT Support & System Engineer",
     description:
       "Portfolio of Dwiki Arlian Maulana — IT Support & System Engineer with 6+ years managing networks, servers, cloud infrastructure, and automation.",
-    url: "https://wikidotexe.com",
+    url: "https://about.wikiarlianm.com",
     siteName: "wikidotexe",
     images: [
       {
-        url: "/metagraph.png",
+        url: "https://about.wikiarlianm.com/metagraph.png",
         width: 1200,
         height: 630,
         alt: "wikidotexe — Dwiki Arlian Maulana",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description:
       "Portfolio of Dwiki Arlian Maulana — IT Support & System Engineer with 6+ years managing networks, servers, and automation.",
     creator: "@wikidotexe",
-    images: ["/metagraph.png"],
+    images: ["https://about.wikiarlianm.com/metagraph.png"],
   },
   icons: {
     icon: "/logo/logowikidotexe.png",
