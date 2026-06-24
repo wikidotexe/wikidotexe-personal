@@ -28,7 +28,7 @@ function buildEmailHtml(name: string, email: string, message: string): string {
               <p style="margin:0 0 4px;color:#FAFAFA;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;opacity:0.6;">/home/contact</p>
               <h1 style="margin:0;color:#FAFAFA;font-size:28px;font-weight:700;letter-spacing:-0.03em;line-height:1.1;">
                 New Message<br/>
-                <span style="font-style:italic;color:transparent;-webkit-text-stroke:1px #FAFAFA;">Incoming</span>.
+                <span style="font-style:italic;color:#FAFAFA;opacity:0.5;">Incoming</span><span style="color:#FAFAFA;opacity:0.5;">.</span>
               </h1>
             </td>
           </tr>
