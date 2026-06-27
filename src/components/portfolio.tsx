@@ -305,6 +305,18 @@ function About() {
                   </span>
                 ))}
               </div>
+              <div className="pt-2">
+                <Magnetic strength={0.3}>
+                  <a
+                    href="https://space.wikiarlianm.com/s/qEHqDBAJxq9eFky"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="brutal-border brutal-shadow inline-flex items-center gap-2 bg-foreground px-5 py-3 font-display text-base text-background transition-transform hover:translate-x-1 hover:translate-y-1 hover:[box-shadow:none]"
+                  >
+                    View Resume <span aria-hidden>↗</span>
+                  </a>
+                </Magnetic>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -415,15 +427,6 @@ function Experience() {
                       </span>
                     ))}
                   </div>
-                </div>
-                <div className="hidden md:flex md:items-center">
-                  <motion.span
-                    className="font-display text-6xl"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 8 }}
-                  >
-                    →
-                  </motion.span>
                 </div>
               </div>
             </Reveal>
